@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Acerca de Nostros
+                    Acerca de Nostros!
                 </div>
 
             </div>

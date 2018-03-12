@@ -11,16 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-	$links=['https://platzi.com/laravel'=>"Curso de Laravel",
-            'https://laravel.com'=>"Página de Laravel"
-             ];
-    return view('welcome',[//'teacher'=>'Irwin Morales',
-    	'links'=>$links]);
-});
+Route::get('/','PagesController@home' );
 
 
-Route::get('/acerca', function () {
-    //return "Acerca de nostros";
-    return view('about');
-});
+Route::get('/acerca', 'PagesController@about');
