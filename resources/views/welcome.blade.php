@@ -17,7 +17,7 @@
      <form action="/messages/create" method="post">
        <div class="form-group @if($errors->has('message')) has-danger @endif">
            {{ csrf_field() }}
-          <input type="text" name="message" class="form-control" placeholder="Qué estas pensando?">
+          <input qtype="text" name="message" class="form-control" placeholder="Qué estas pensando?">
               {{-- @if ($errors->any()) --}}
                 @if ($errors->has('message'))
 
