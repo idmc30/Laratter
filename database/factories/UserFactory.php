@@ -21,3 +21,13 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Message::class, function(Faker $faker){ 
+	//faker tienes metodos word  te da palabras 
+	//paragraph te da parrafo
+	//realText() te da texto del libro de alicia en el pais de las maravillas
+           return [
+               'content' =>$faker->realText(random_int(20,160)),
+               'image' =>$faker->imageUrl(600,338)
+           ];
+        } );
