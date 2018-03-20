@@ -47,6 +47,12 @@
          <p>No hay mensajes destacados</p>
        @endforelse
        {{-- forelse  se usa cuando un array puede estar vacio --}}
+
+       @if(count($messages))
+       <div class="mt-2 mx-auto">
+            {{ $messages->links() }}
+       </div>
+       @endif
    </div>
 
 @endsection
