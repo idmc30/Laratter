@@ -24,6 +24,19 @@
                                 @endif
                             </div>
                         </div>
+                        {{-- agramaos un campo mas por la modificacion de la tabla usuarios --}}
+
+                        <div class="form-group row">
+                            <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
+                             <div class="col-md-6">
+                                <input type="text" id="username" name="username" class="form-control" value="{{ old('username')}}">
+                                @if ($errors->has('username'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
