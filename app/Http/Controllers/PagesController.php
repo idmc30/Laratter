@@ -13,7 +13,8 @@ class PagesController extends Controller
           
           // $messages= Message::all();
          //  dd($messages);
-    	$messages= Message::paginate(10);
+    	//latest para ordenar de formar descendente
+    	$messages= Message::latest()->paginate(10);
           return view('welcome',[
           	 'messages'=>$messages
 

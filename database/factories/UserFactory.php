@@ -30,6 +30,8 @@ $factory->define(App\Message::class, function(Faker $faker){
 	//realText() te da texto del libro de alicia en el pais de las maravillas
            return [
                'content' =>$faker->realText(random_int(20,160)),
-               'image' =>$faker->imageUrl(600,338)
+               'image' =>$faker->imageUrl(600,338),
+               'created_at'=> $faker->dateTimeThisDecade,
+               'updated_at'=> $faker->dateTimeThisDecade,
            ];
         } );
