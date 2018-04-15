@@ -13,12 +13,19 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
          
-        factory(App\User::class, 50)->create()->each(function (App\User $user){
+        $users=factory(App\User::class, 50)->create();
+        $users->each(function (App\User $user) use ($users){
             factory(App\Message::class)
             ->times(100)//quiero crear 100 mensajes
             ->create([
                'user_id' => $user->id,
             ]);
+            
+            $user->follows()->sync(
+                $users->random(10)
+            );
+
+
         }); 
         
     }

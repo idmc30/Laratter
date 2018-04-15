@@ -14,9 +14,38 @@ class UsersController extends Controller
 
        //where('nombre de la columna', $username)
        //firs solo traeme una solo                       
-    	$user= User::where('username', $username)->first();
+    	$user= $this->finByUsername($username);
     		return view('users.show',['user'=> $user]);
 
         }
+
+
+     public function follows($username){
+
+     	$user= $this->finByUsername($username);
+    		return view('users.follows',['user'=> $user]);
+     } 
+
+
+     public function follow($username, Request $request){
+      
+      
+      $user= $this->finByUsername($username);
+
+      $me= $request->user();
+
+      $me->follows()->attach($user);
+
+      return redirect("/$username")->withSuccess('Usuario seguido!');
+
+
+     }
+
+
+
+     private function finByUsername($username){
+
+     	return User::where('username', $username)->first();
+     }
   }
 
